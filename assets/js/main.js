@@ -1,3 +1,13 @@
+let links = document.querySelectorAll(".nav-link");
+let currentPage = window.location.pathname.split("/").pop();
+
+links.forEach(link => {
+    let linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    }
+});
 function toggleSidebar() {
     const sb = document.getElementById("sidebar");
     const texts = document.querySelectorAll(".sidebar-text");

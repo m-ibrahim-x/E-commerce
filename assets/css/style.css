@@ -1,3 +1,8 @@
+.nav-link.active {
+    color: #facc15;
+    border-bottom: 2px solid #facc15;
+}
+
 header nav .nav-btns .btn-logout {
     display: none;
 }
