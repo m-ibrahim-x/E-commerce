@@ -10,8 +10,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Custom CSS -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -30,7 +29,7 @@
             <form class="flex flex-1 max-w-2xl mx-auto">
                 <div class="flex w-full bg-white rounded overflow-hidden border">
                     <input type="search" placeholder="Search..." class="w-full px-3 py-2 text-black outline-none">
-                    <button type="submit" class="bg-[#febd69] px-4 flex items-center justify-center cursor-pointer"
+                    <button type="submit" class="bg-yellow-400 px-4 flex items-center justify-center cursor-pointer"
                         aria-label="Search">
                         <i class="fa-solid fa-magnifying-glass text-black"></i>
                     </button>
@@ -46,12 +45,12 @@
                 </select>
                 <!-- Wishlist -->
                 <div class="relative cursor-pointer">
-                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart  hover:text-red-500"></i>
                     <span class="absolute -top-2 -right-2 bg-red-500 text-xs px-1 rounded">0</span>
                 </div>
                 <!-- Cart -->
                 <div class="relative cursor-pointer">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-cart-shopping hover:text-yellow-400"></i>
                     <span class="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-1 rounded">0</span>
                 </div>
             </div>
@@ -61,21 +60,22 @@
             <div class=" mx-auto px-4 py-2 flex  gap-4 justify-between items-center">
                 <!-- Links -->
                 <ul class="flex gap-4 text-sm md:text-base font-medium gap-6  lg:gap-8">
-                    <li><a href="index.html" class="nav-link active border-b-2 border-yellow-400 text-yellow-400">Home</a></li>
+                    <li><a href="index.html"
+                            class="nav-link active border-b-2 border-yellow-400 text-yellow-400">Home</a></li>
                     <li><a href="products.html" class="nav-link hover:text-yellow-400">Products</a></li>
                     <li><a href="about.html" class="nav-link hover:text-yellow-400">About</a></li>
                     <li><a href="contact.html" class="nav-link hover:text-yellow-400">Contact</a></li>
                 </ul>
                 <!-- Right -->
                 <div class="nav-btns flex items-center gap-4">
-                    <button class="btn-register px-4 py-2 border border-gray-400 rounded hover:bg-gray-700 transition"
-                        aria-label="Register">
-                        <a href="login.html" class="hover:text-yellow-400">Log In</a>
-                    </button>
-                    <button class="btn-logout px-4 py-2 border border-yellow-400 rounded hover:bg-gray-700 transition"
-                        aria-label="Log Out">
-                        <a href="#" class="hover:text-yellow-400">Log Out</a>
-                    </button>
+                    <a id="loginLink" href="login.html"
+                        class="px-4 py-2 border border-gray-400 rounded hover:bg-gray-700 hover:text-yellow-400 transition">
+                        Log In
+                    </a>
+                    <a id="logoutBtn" href="#"
+                        class="hidden whitespace-nowrap px-4 py-2 border border-yellow-400 text-yellow-400 rounded hover:bg-yellow-400 hover:text-black transition">
+                        Log Out
+                    </a>
                     <!-- Sidebar Toggle -->
                     <button onclick="toggleSidebar()" class="p-2 rounded 
                     text-gray-300 
@@ -90,7 +90,8 @@
     </header>
     <!-- Start Sidebar -->
     <aside id="sidebar"
-        class="fixed right-0 top-[122px] h-[calc(100%-122px)] bg-white shadow w-16 transition-all duration-300 flex flex-col z-50">
+        class="fixed right-0 top-[126px] h-[calc(100%-126px)] bg-white shadow w-16 transition-all duration-300 flex flex-col justify-between z-50">
+        <!-- Top Links -->
         <nav class="flex flex-col gap-4 p-3">
             <a href="#" class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition">
                 <i class="fa-solid fa-cart-shopping w-6 text-center text-lg"></i>
@@ -105,6 +106,20 @@
                 <span class="sidebar-text hidden">Invoice</span>
             </a>
         </nav>
+        <!-- Divider -->
+        <div class="border-t mx-3"></div>
+        <!-- User Section -->
+        <div id="userSection" class="p-3 hidden">
+            <div class="flex items-center gap-3 p-2">
+                <i class="fa-solid fa-user w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden username">Username</span>
+            </div>
+            <a href="#" id="sidebarLogout"
+                class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition mt-2">
+                <i class="fa-solid fa-right-from-bracket w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden" id="logoutBtn">Logout</span>
+            </a>
+        </div>
     </aside>
     <!-- Start Hero Section -->
     <main id="mainContent"
@@ -119,7 +134,7 @@
                 Explore our premium collection of products designed to bring comfort.
             </p>
             <div class="flex gap-4 justify-center">
-                <button class="bg-[#febd69] text-black px-6 py-2 rounded hover:scale-105 transition">
+                <button class="bg-yellow-400 text-black px-6 py-2 rounded hover:scale-105 transition">
                     Shop Now
                 </button>
                 <button class="border px-6 py-2 rounded hover:bg-white hover:text-black transition">
@@ -128,6 +143,152 @@
             </div>
         </div>
     </main>
+    <!-- Start Filter Section -->
+    <section id="filter" class="mr-16 transition-all duration-300"">
+        <div class=" flex justify-center flex-wrap mt-8 gap-3 mb-8">
+        <button class="filter-btn active px-5 py-2 rounded-full bg-black text-white transition"
+            data-filter="all">All</button>
+        <button
+            class="filter-btn px-5 py-2 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
+            data-filter="pillows">
+            Pillows
+        </button>
+        <button
+            class="filter-btn px-5 py-2 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
+            data-filter="mattress">
+            Mattress
+        </button>
+        <button
+            class="filter-btn px-5 py-2 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
+            data-filter="offers">
+            Offers
+        </button>
+        <button
+            class="filter-btn px-5 py-2 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
+            data-filter="luxury">
+            Luxury
+        </button>
+        </div>
+    </section>
+    <!-- Start Product Section -->
+    <section id="products" class="mr-16 transition-all duration-300">
+        <!-- Product Card -->
+        <div class="container mx-auto px-4 py-10">
+            <!-- Title -->
+            <h2 class="text-2xl font-bold mb-6 text-center">Our Products</h2>
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="container-boxs">
+            </div>
+    </section>
+    <!-- Start Choose Us Section -->
+    <section id="Choose-Us" class="bg-white py-12 mt-10 mr-16 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <!-- Title -->
+            <h2 class="text-2xl font-bold text-center mb-10">
+                Why Choose Us
+            </h2>
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                <!-- Item 1 -->
+                <div class="p-6 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-truck-fast text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">Fast Delivery</h3>
+                    <p class="text-gray-500">
+                        Get your products delivered quickly and safely.
+                    </p>
+                </div>
+                <!-- Item 2 -->
+                <div class="p-6 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-star text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">Top Quality</h3>
+                    <p class="text-gray-500">
+                        We provide premium quality products for your comfort.
+                    </p>
+                </div>
+                <!-- Item 3 -->
+                <div class="p-6 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-headset text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">24/7 Support</h3>
+                    <p class="text-gray-500">
+                        Our support team is always here to help you.
+                    </p>
+                </div>
+                <!-- Item 4 -->
+                <div class="p-6 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-lock text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">Secure Payment</h3>
+                    <p class="text-gray-500">
+                        Your payments are secure and protected.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start Special Offer -->
+    <section id="Special-Offer" class="bg-yellow-50 py-12 text-center mr-16 transition-all duration-300">
+        <h2 class="text-3xl font-bold mb-3">🔥 Special Offer</h2>
+        <p class="mb-5">Get 30% off on selected products</p>
+        <button class="bg-yellow-400 text-white font-semibold hover:bg-yellow-300  px-6 py-2 rounded hover:scale-105 transition">
+            Shop Now
+        </button>
+    </section>
+    <!-- Start Footer Section -->
+    <footer id="footer" class="bg-[#131921] text-gray-300 pt-10  mr-16 transition-all duration-300">
+        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Logo + About -->
+            <div>
+                <h2 class="text-xl font-bold text-white mb-4">E-Shop</h2>
+                <p class="text-sm leading-relaxed">
+                    Discover premium products designed for comfort and quality.
+                    We bring you the best shopping experience.
+                </p>
+            </div>
+            <!-- Links -->
+            <div>
+                <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-yellow-400 transition">Home</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Products</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">About</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Categories -->
+            <div>
+                <h3 class="text-white font-semibold mb-4">Categories</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-yellow-400 transition">Pillows</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Mattress</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Blankets</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Luxury</a></li>
+                </ul>
+            </div>
+            <!-- Social -->
+            <div>
+                <h3 class="text-white font-semibold mb-4">Follow Us</h3>
+                <div class="flex gap-4 text-lg mb-4">
+                    <a href="#" class="hover:text-yellow-400 transition">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" class="hover:text-yellow-400 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="hover:text-yellow-400 transition">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+                <p class="text-sm">Email: support@eshop.com</p>
+            </div>
+        </div>
+        <!-- Bottom -->
+        <div class="border-t border-gray-700 mt-8 py-4 text-center text-sm">
+            © 2026 E-Shop. All rights reserved.
+        </div>
+    </footer>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- User JS -->
+    <script src="assets/js/user.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>

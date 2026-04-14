@@ -46,3 +46,4 @@ form.addEventListener("submit", (e) => {
         window.location.replace("index.html");
     }, 1500);
 });
+

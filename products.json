@@ -1,0 +1,127 @@
+[
+    {
+        "id": 1,
+        "title": "Soft Pillow",
+        "price": 200,
+        "category": "pillows",
+        "image": "assets/imgs/products/1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Luxury Pillow",
+        "price": 400,
+        "category": "luxury",
+        "image": "assets/imgs/products/2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Memory Foam Pillow",
+        "price": 350,
+        "category": "pillows",
+        "image": "assets/imgs/products/3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Classic Pillow",
+        "price": 150,
+        "category": "pillows",
+        "image": "assets/imgs/products/4.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Premium Mattress",
+        "price": 2000,
+        "category": "mattress",
+        "image": "assets/imgs/products/5.jpg"},
+    {
+        "id": 6,
+        "title": "Comfort Mattress",
+        "price": 1800,
+        "category": "mattress",
+        "image": "assets/imgs/products/6.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Orthopedic Mattress",
+        "price": 2500,
+        "category": "luxury",
+        "image": "assets/imgs/products/7.jpg"},
+    {
+        "id": 8,
+        "title": "Cooling Pillow",
+        "price": 300,
+        "category": "offers",
+        "image": "assets/imgs/products/8.jpg"},
+    {
+        "id": 9,
+        "title": "Feather Pillow",
+        "price": 270,
+        "category": "pillows",
+        "image": "assets/imgs/products/9.jpg"},
+    {
+        "id": 10,
+        "title": "Travel Pillow",
+        "price": 120,
+        "category": "offers",
+        "image": "assets/imgs/products/10.jpg"},
+    {
+        "id": 11,
+        "title": "Luxury Blanket",
+        "price": 500,
+        "category": "luxury",
+        "image": "assets/imgs/products/11.jpg"},
+    {
+        "id": 12,
+        "title": "Warm Blanket",
+        "price": 350,
+        "category": "blanket",
+        "image": "assets/imgs/products/12.jpg"},
+    {
+        "id": 13,
+        "title": "Soft Blanket",
+        "price": 300,
+        "category": "blanket",
+        "image": "assets/imgs/products/13.jpg"},
+    {
+        "id": 14,
+        "title": "Hotel Pillow",
+        "price": 320,
+        "category": "luxury",
+        "image": "assets/imgs/products/14.jpg"},
+    {
+        "id": 15,
+        "title": "Ergonomic Pillow",
+        "price": 380,
+        "category": "pillows",
+        "image": "assets/imgs/products/15.jpg"},
+    {
+        "id": 16,
+        "title": "Foldable Mattress",
+        "price": 1500,
+        "category": "mattress",
+        "image": "assets/imgs/products/16.jpg"},
+    {
+        "id": 17,
+        "title": "Kids Pillow",
+        "price": 100,
+        "category": "offers",
+        "image": "assets/imgs/products/17.jpg"},
+    {
+        "id": 18,
+        "title": "Queen Mattress",
+        "price": 3000,
+        "category": "luxury",
+        "image": "assets/imgs/products/18.jpg"},
+    {
+        "id": 19,
+        "title": "King Mattress",
+        "price": 3500,
+        "category": "luxury",
+        "image": "assets/imgs/products/19.jpg"},
+    {
+        "id": 20,
+        "title": "Decor Pillow",
+        "price": 220,
+        "category": "pillows",
+        "image": "assets/imgs/products/20.jpg"}
+]

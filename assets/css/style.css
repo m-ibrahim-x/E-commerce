@@ -21,3 +21,15 @@ header nav .nav-btns .btn-logout {
 #sidebar a:hover i {
     color: #febd69;
 }
+.add-btn.remove {
+    background-color: #ef4444; 
+    color: white;
+}
+
+.add-btn.remove:hover {
+    background-color: #dc2626
+}
+
+.add-btn.remove .add-icon {
+    display: none;
+}
