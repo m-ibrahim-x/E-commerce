@@ -101,10 +101,10 @@ function renderProducts(products) {
                     </div>
 
                     <!-- Button -->
-                    <button class="add-btn w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-black text-white hover:bg-gray-800 active:scale-95 transition-all duration-300">
-                        <i class="fa-solid fa-cart-shopping add-icon"></i>
-                        <i class="fa-solid fa-trash remove-icon hidden"></i>
-                        <span class="btn-text">Add to Cart</span>
+                    <button class="add-btn w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-black text-white active:scale-95 transition-all duration-300">
+                            <i class="fa fa-shopping-cart add-icon"></i>
+                            <i class="fa fa-trash remove-icon" style="display: none;"></i>
+                            <span class="btn-text">Add to Cart</span>
                     </button>
                 </div>
             </div>
@@ -117,12 +117,11 @@ function renderProducts(products) {
 // fetch data
 axios.get("products.json")
     .then(response => {
-        all_products = response.data; // تخزين البيانات
-        renderProducts(all_products); // عرض المنتجات
+        all_products = response.data;
+        renderProducts(all_products);
+        syncCartButtons();
+        syncWishlistButtons(); 
     })
-    .catch(error => {
-        console.log("Error loading products:", error);
-    });
 /*********************
     Filter
 **********************/
@@ -162,27 +161,78 @@ document.addEventListener("click", (e) => {
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    let id = btn.closest("[data-id]").dataset.id;
-    let product = all_products.find(p => p.id == id);
+    let id = Number(btn.closest("[data-id]").dataset.id);
+    let product = all_products.find(p => p.id === id);
 
-    let index = cart.findIndex(item => item.id == id);
+    let index = cart.findIndex(item => item.id === id);
+
+    let cartIcon = btn.querySelector(".add-icon");
+    let trashIcon = btn.querySelector(".remove-icon");
+    let text = btn.querySelector(".btn-text");
 
     if (index !== -1) {
+        // Remove
         cart.splice(index, 1);
 
-        btn.classList.remove("bg-red-500", "hover:bg-red-600", "remove");
-        btn.classList.add("bg-black", "hover:bg-gray-800");
+        btn.classList.remove("bg-red-500");
+        btn.classList.add("bg-black");
+
+        text.textContent = "Add To Cart";
+
+        cartIcon.style.display = "inline-block";
+        trashIcon.style.display = "none";
 
     } else {
-        cart.push({...product,
-                quantity : 1
-        });
-        btn.classList.add("bg-red-500", "hover:bg-red-600", "remove");
-        btn.classList.remove("bg-black", "hover:bg-gray-800");
+        // Add
+        cart.push({ ...product, quantity: 1 });
+
+        btn.classList.add("bg-red-500");
+        btn.classList.remove("bg-black");
+
+        text.textContent = "Remove";
+
+        cartIcon.style.display = "none";
+        trashIcon.style.display = "inline-block";
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartCount();
 });
+
+
+function syncCartButtons() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    document.querySelectorAll(".add-btn").forEach(btn => {
+        let id = Number(btn.closest("[data-id]").dataset.id);
+
+        let exists = cart.find(item => item.id === id);
+
+        let cartIcon = btn.querySelector(".add-icon");
+        let trashIcon = btn.querySelector(".remove-icon");
+        let text = btn.querySelector(".btn-text");
+
+        if (exists) {
+            btn.classList.add("bg-red-500");
+            btn.classList.remove("bg-black");
+
+            text.textContent = "Remove";
+
+            cartIcon.style.display = "none";
+            trashIcon.style.display = "inline-block";
+
+        } else {
+            btn.classList.remove("bg-red-500");
+            btn.classList.add("bg-black");
+
+            text.textContent = "Add To Cart";
+
+            cartIcon.style.display = "inline-block";
+            trashIcon.style.display = "none";
+        }
+    });
+}
 /*********************
     Favorite
 **********************/
@@ -212,3 +262,20 @@ document.addEventListener("click", (e) => {
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
 });
+function syncWishlistButtons() {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    document.querySelectorAll(".add-fav").forEach(btn => {
+        let id = btn.closest("[data-id]").dataset.id;
+
+        let exists = wishlist.find(item => item.id == id);
+
+        if (exists) {
+            btn.classList.remove("text-gray-400");
+            btn.classList.add("text-red-500");
+        } else {
+            btn.classList.remove("text-red-500");
+            btn.classList.add("text-gray-400");
+        }
+    });
+}

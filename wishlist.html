@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <!-- Logo Icon -->
+    <link rel="shortcut icon" href="assets/imgs/Brand/logo.png" type="image/png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+<body class="bg-gray-100">
+    <!-- Start Header  -->
+    <header class="bg-[#131921] text-white sticky top-0 z-50">
+        <!-- TOP -->
+        <div class=" mx-auto px-4 py-3 flex items-center gap-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="assets/imgs/Brand/logo.png"
+                    class="size-10 border border-2 border-gray-300 rounded-full object-cover" alt="Logo">
+            </div>
+            <!-- Search -->
+            <form class="flex flex-1 max-w-2xl mx-auto">
+                <div class="flex w-full bg-white rounded overflow-hidden border">
+                    <input type="search" placeholder="Search..." class="w-full px-3 py-2 text-black outline-none">
+                    <button type="submit" class="bg-yellow-400 px-4 flex items-center justify-center cursor-pointer"
+                        aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass text-black"></i>
+                    </button>
+                </div>
+            </form>
+            <!-- Icons -->
+            <div class="flex items-center gap-5 text-lg">
+                <select id="langSelect"
+                    class="bg-[#131921] text-white border border-gray-400 px-2 py-1 rounded text-sm focus:outline-none"
+                    aria-label="Select Language">
+                    <option value="en" class="text-white">EN</option>
+                    <option value="ar" class="text-white">AR</option>
+                </select>
+                <!-- Wishlist -->
+                <div class="relative cursor-pointer">
+                    <a href="wishlist.html">
+                        <i class="fa-solid fa-heart  hover:text-red-500"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-xs px-1 rounded"
+                            id="wishlist-Count">0</span>
+                    </a>
+                </div>
+                <!-- Cart -->
+                <div class="relative cursor-pointer">
+                    <a href="order.html">
+                        <i class="fa-solid fa-cart-shopping hover:text-yellow-400"></i>
+                        <span class="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-1 rounded"
+                            id="cart-Count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- BOTTOM -->
+        <nav class="bg-[#232f3e]">
+            <div class=" mx-auto px-4 py-2 flex  gap-4 justify-between items-center">
+                <!-- Links -->
+                <ul class="flex gap-4 text-sm md:text-base font-medium gap-6  lg:gap-8">
+                    <li><a href="index.html"
+                            class="nav-link active border-b-2 border-yellow-400 text-yellow-400">Home</a></li>
+                    <li><a href="products.html" class="nav-link hover:text-yellow-400">Products</a></li>
+                    <li><a href="about.html" class="nav-link hover:text-yellow-400">About</a></li>
+                    <li><a href="contact.html" class="nav-link hover:text-yellow-400">Contact</a></li>
+                </ul>
+                <!-- Right -->
+                <div class="nav-btns flex items-center gap-4">
+                    <a id="loginLink" href="login.html"
+                        class="px-4 py-2 border border-gray-400 rounded hover:bg-gray-700 hover:text-yellow-400 transition">
+                        Log In
+                    </a>
+                    <a id="logoutBtn" href="#"
+                        class="hidden whitespace-nowrap px-4 py-2 border border-yellow-400 text-yellow-400 rounded hover:bg-yellow-400 hover:text-black transition">
+                        Log Out
+                    </a>
+                    <!-- Sidebar Toggle -->
+                    <button onclick="toggleSidebar()" class="p-2 rounded 
+                    text-gray-300 
+                    hover:text-yellow-400 
+                    hover:bg-gray-700 
+                    transition duration-200" aria-label="Toggle Sidebar">
+                        <i class="fa-solid fa-sliders text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Start Sidebar -->
+    <aside id="sidebar"
+        class="fixed right-0 top-[126px] h-[calc(100%-126px)] bg-white shadow w-16 transition-all duration-300 flex flex-col justify-between z-50">
+        <!-- Top Links -->
+        <nav class="flex flex-col gap-4 p-3">
+            <a href="order.html" class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition">
+                <i class="fa-solid fa-cart-shopping w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden">Orders</span>
+            </a>
+            <a href="wishlist.html" class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition">
+                <i class="fa-solid fa-heart w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden">Wishlist</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition">
+                <i class="fa-solid fa-file-invoice w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden">Invoice</span>
+            </a>
+        </nav>
+        <!-- Divider -->
+        <div class="border-t mx-3"></div>
+        <!-- User Section -->
+        <div id="userSection" class="p-3 hidden">
+            <div class="flex items-center gap-3 p-2">
+                <i class="fa-solid fa-user w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden username">Username</span>
+            </div>
+            <a href="#" id="sidebarLogout"
+                class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition mt-2">
+                <i class="fa-solid fa-right-from-bracket w-6 text-center text-lg"></i>
+                <span class="sidebar-text hidden" id="logoutBtn">Logout</span>
+            </a>
+        </div>
+    </aside>
+    <h1>Wishlist</h1>
+    <!-- User JS -->
+    <script src="assets/js/user.js"></script>
+    <!-- Counter JS -->
+    <script src="assets/js/counter.js"></script>
+    <!-- Cart JS -->
+    <script src="assets/js/wishlist.js"></script>
+</body>
+
+</html>

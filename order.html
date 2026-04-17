@@ -135,10 +135,10 @@
             <h2 class="text-2xl font-bold mb-6 text-center">Your Cart</h2>
             <!-- Grid -->
             <div class="grid md:grid-cols-[2fr_1fr] gap-6 items-start">
-                <!-- Cart -->
+                <!-- Carts -->
                 <div class="bg-white p-5 rounded-2xl shadow ">
-                    <div class="space-y-4">
-                        <!-- Product -->
+                    <div class="products space-y-4">
+                        <!-- Products -->
                     </div>
                 </div>
                 <!-- price -->
@@ -146,16 +146,16 @@
                     <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
                     <div class="flex justify-between mb-2">
                         <span>Subtotal</span>
-                        <span>$290</span>
+                        <span id="subtotal">0 EGP</span>
                     </div>
                     <div class="flex justify-between mb-2">
                         <span>Shipping</span>
-                        <span>$10</span>
+                        <span id="shipping">0 EGP</span>
                     </div>
                     <hr class="my-3">
                     <div class="flex justify-between font-bold text-lg">
                         <span>Total</span>
-                        <span>$300</span>
+                        <span id="total">0 EGP</span>
                     </div>
                     <button class="w-full mt-4 bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition">
                         Checkout
@@ -166,10 +166,10 @@
     </section>
     <!-- User JS -->
     <script src="assets/js/user.js"></script>
+    <!-- Counter JS -->
+    <script src="assets/js/counter.js"></script>
     <!-- Cart JS -->
     <script src="assets/js/order.js"></script>
-    <!-- Wishlist JS -->
-    <script src="assets/js/wishlist.js"></script>
 </body>
 
 </html>
