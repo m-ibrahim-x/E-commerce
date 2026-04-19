@@ -50,8 +50,6 @@ function toggleSidebar() {
     }
 
 }
-
-
 /*********************
     Product 
 **********************/
@@ -113,7 +111,6 @@ function renderProducts(products) {
 
     container.innerHTML = cards;
 }
-
 // fetch data
 axios.get("products.json")
     .then(response => {
@@ -199,8 +196,6 @@ document.addEventListener("click", (e) => {
 
     updateCartCount();
 });
-
-
 function syncCartButtons() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -261,6 +256,8 @@ document.addEventListener("click", (e) => {
     }
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    updateWishlistCount();
 });
 function syncWishlistButtons() {
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];

@@ -19,3 +19,25 @@ function updateCartCount() {
 }
 
 updateCartCount();
+
+function getWishlist() {
+    return JSON.parse(localStorage.getItem("wishlist")) || [];
+}
+
+function setWishlist(wishlist) {
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
+function updateWishlistCount() {
+    let wishlist = getWishlist();
+
+    let count = wishlist.length;
+
+    let el = document.querySelector("#wishlist-Count");
+
+    if (el) {
+        el.innerHTML = count;
+    }
+}
+
+
+updateWishlistCount();

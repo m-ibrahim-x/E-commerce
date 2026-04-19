@@ -33,7 +33,7 @@ form.addEventListener("submit", (e) => {
         alert("Please enter your confirm password");
         return;
     }
-    
+
     if (password.length < 6) {
         alert("Password must be at least 6 characters");
         return;
