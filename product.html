@@ -4,20 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order</title>
-    <!-- Logo Icon -->
-    <link rel="shortcut icon" href="assets/imgs/Brand/logo.png" type="image/png">
-    <!-- Font Awesome -->
+    <title>Product Details</title>
+
     <link rel="stylesheet" href="assets/css/all.min.css">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
-
 <body class="bg-gray-100">
-    <!-- Start Header  -->
+
+    <!-- ================= HEADER ================= -->
     <header class="bg-[#131921] text-white sticky top-0 z-50">
         <!-- TOP -->
         <div class=" mx-auto px-4 py-3 flex items-center gap-4">
@@ -88,7 +84,7 @@
             </div>
         </nav>
     </header>
-    <!-- Start Sidebar -->
+    <!-- ================= SIDEBAR ================= -->
     <aside id="sidebar"
         class="fixed right-0 top-[126px] h-[calc(100%-126px)] bg-white shadow w-16 transition-all duration-300 flex flex-col justify-between z-50">
         <!-- Top Links -->
@@ -101,7 +97,7 @@
                 <i class="fa-solid fa-heart w-6 text-center text-lg"></i>
                 <span class="sidebar-text hidden">Wishlist</span>
             </a>
-            <a href="checkout.html" class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition">
+            <a href="#" class="flex items-center gap-3 p-2 rounded hover:bg-gray-100 transition">
                 <i class="fa-solid fa-file-invoice w-6 text-center text-lg"></i>
                 <span class="sidebar-text hidden">Invoice</span>
             </a>
@@ -121,48 +117,18 @@
             </a>
         </div>
     </aside>
-    <!-- Start Order Section -->
-    <section id="order" class="mr-16 transition-all duration-300 min-h-screen bg-gray-100">
-        <div class="container mx-auto px-4 py-10">
-            <!-- Title -->
-            <h2 class="text-2xl font-bold mb-6 text-center">Your Cart</h2>
-            <!-- Grid -->
-            <div class="grid md:grid-cols-[2fr_1fr] gap-6 items-start">
-                <!-- Carts -->
-                <div class="bg-white p-5 rounded-2xl shadow ">
-                    <div class="products space-y-4">
-                        <!-- Products -->
-                    </div>
-                </div>
-                <!-- price -->
-                <div class=" flex flex-col bg-white p-5 rounded-2xl shadow h-fit">
-                    <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
-                    <div class="flex justify-between mb-2">
-                        <span>Subtotal</span>
-                        <span id="subtotal">0 EGP</span>
-                    </div>
-                    <div class="flex justify-between mb-2">
-                        <span>Shipping</span>
-                        <span id="shipping">0 EGP</span>
-                    </div>
-                    <hr class="my-3">
-                    <div class="flex justify-between font-bold text-lg">
-                        <span>Total</span>
-                        <span id="total">0 EGP</span>
-                    </div>
-                    <a href="checkout.html" class="w-full mt-4 text-center bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition">
-                        Checkout
-                    </a>
-                </div>
-            </div>
-        </div>
+    <!-- ================= PRODUCT ================= -->
+    <section class="py-10 px-4 mr-16 transition-all duration-300"
+    id="container-boxs">
     </section>
     <!-- User JS -->
     <script src="assets/js/user.js"></script>
     <!-- Counter JS -->
     <script src="assets/js/counter.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Cart JS -->
-    <script src="assets/js/order.js"></script>
+    <script src="assets/js/product.js"></script>
 </body>
 
 </html>

@@ -43,3 +43,26 @@ header nav .nav-btns .btn-logout {
 .add-btn.remove .remove-icon {
     display: inline;
 }
+/************************* PRINT CSS *************************/
+@media print {
+
+    body{
+        background: white;
+        padding: 0;
+    }
+
+    button,
+    a{
+        display: none !important;
+    }
+
+    .shadow-xl{
+        box-shadow: none !important;
+    }
+
+    .rounded-2xl{
+        border-radius: 0 !important;
+    }
+
+}
+

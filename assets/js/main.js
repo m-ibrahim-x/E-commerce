@@ -80,10 +80,6 @@ function renderProducts(products) {
                         <i class="fa-regular fa-heart  add-fav text-gray-400 hover:text-red-500 hover:scale-125 transition duration-200"></i>
                     </button>
 
-                    <!-- Badge -->
-                    <span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        -20%
-                    </span>
                 </div>
 
                 <!-- Content -->
@@ -95,7 +91,7 @@ function renderProducts(products) {
                         </a>
                     </h3>
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="text-lg font-bold text-black">${product.price}</span>
+                        <p class="text-lg font-bold text-black">${product.price}<strong class="ml-1 text-yellow-500">EGP</strong></p>
                     </div>
 
                     <!-- Button -->

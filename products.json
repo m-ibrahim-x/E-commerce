@@ -4,124 +4,159 @@
         "title": "Soft Pillow",
         "price": 200,
         "category": "pillows",
-        "image": "assets/imgs/products/1.jpg"
+        "image": "assets/imgs/products/1.jpg",
+        "desc": "Premium sleeping pillow designed for maximum comfort and gentle neck support. Crafted with soft breathable materials to provide a relaxing sleep experience and lasting comfort every night."
     },
     {
         "id": 2,
         "title": "Luxury Pillow",
         "price": 400,
         "category": "luxury",
-        "image": "assets/imgs/products/2.jpg"
+        "image": "assets/imgs/products/2.jpg",
+        "desc": "Elegant luxury pillow made with high-quality filling and smooth fabric. Perfect for users seeking premium comfort, stylish design, and restful sleep every night."
     },
     {
         "id": 3,
         "title": "Memory Foam Pillow",
         "price": 350,
         "category": "pillows",
-        "image": "assets/imgs/products/3.jpg"
+        "image": "assets/imgs/products/3.jpg",
+        "desc": "Advanced memory foam pillow that adapts to your head and neck shape. Helps reduce pressure points and improves sleeping posture for deeper relaxation."
     },
     {
         "id": 4,
         "title": "Classic Pillow",
         "price": 150,
         "category": "pillows",
-        "image": "assets/imgs/products/4.jpg"
+        "image": "assets/imgs/products/4.jpg",
+        "desc": "Classic everyday pillow with soft support and lightweight filling. Ideal for daily use, providing balanced comfort and a fresh sleeping experience."
     },
     {
         "id": 5,
         "title": "Premium Mattress",
         "price": 2000,
         "category": "mattress",
-        "image": "assets/imgs/products/5.jpg"},
+        "image": "assets/imgs/products/5.jpg",
+        "desc": "Premium mattress built for superior body support and long-lasting durability. Designed to improve sleep quality with comfortable layered cushioning."
+    },
     {
         "id": 6,
         "title": "Comfort Mattress",
         "price": 1800,
         "category": "mattress",
-        "image": "assets/imgs/products/6.jpg"
+        "image": "assets/imgs/products/6.jpg",
+        "desc": "Comfort mattress made with supportive foam layers that reduce pressure and improve body alignment. Great for daily comfort and healthy sleep."
     },
     {
         "id": 7,
         "title": "Orthopedic Mattress",
         "price": 2500,
         "category": "luxury",
-        "image": "assets/imgs/products/7.jpg"},
+        "image": "assets/imgs/products/7.jpg",
+        "desc": "Orthopedic mattress engineered to support the spine and reduce back discomfort. Excellent choice for users seeking medical-grade comfort and stability."
+    },
     {
         "id": 8,
         "title": "Cooling Pillow",
         "price": 300,
         "category": "offers",
-        "image": "assets/imgs/products/8.jpg"},
+        "image": "assets/imgs/products/8.jpg",
+        "desc": "Cooling pillow designed with breathable materials that help regulate temperature during sleep. Perfect for warm weather and night comfort."
+    },
     {
         "id": 9,
         "title": "Feather Pillow",
         "price": 270,
         "category": "pillows",
-        "image": "assets/imgs/products/9.jpg"},
+        "image": "assets/imgs/products/9.jpg",
+        "desc": "Soft feather pillow with luxurious cushioning and lightweight comfort. Offers a hotel-style sleeping experience with premium softness."
+    },
     {
         "id": 10,
         "title": "Travel Pillow",
         "price": 120,
         "category": "offers",
-        "image": "assets/imgs/products/10.jpg"},
+        "image": "assets/imgs/products/10.jpg",
+        "desc": "Compact travel pillow created for neck support during flights, car rides, and journeys. Lightweight, portable, and easy to carry anywhere."
+    },
     {
         "id": 11,
         "title": "Luxury Blanket",
         "price": 500,
         "category": "luxury",
-        "image": "assets/imgs/products/11.jpg"},
+        "image": "assets/imgs/products/11.jpg",
+        "desc": "Luxury blanket made from ultra-soft premium fabric that provides warmth and elegance. A perfect addition to modern bedrooms and cozy nights."
+    },
     {
         "id": 12,
         "title": "Warm Blanket",
         "price": 350,
         "category": "blanket",
-        "image": "assets/imgs/products/12.jpg"},
+        "image": "assets/imgs/products/12.jpg",
+        "desc": "Warm blanket designed for cold seasons with thick soft texture. Delivers excellent insulation while maintaining breathability and comfort."
+    },
     {
         "id": 13,
         "title": "Soft Blanket",
         "price": 300,
         "category": "blanket",
-        "image": "assets/imgs/products/13.jpg"},
+        "image": "assets/imgs/products/13.jpg",
+        "desc": "Soft everyday blanket made with cozy fabric and lightweight warmth. Suitable for year-round use and relaxing comfort at home."
+    },
     {
         "id": 14,
         "title": "Hotel Pillow",
         "price": 320,
         "category": "luxury",
-        "image": "assets/imgs/products/14.jpg"},
+        "image": "assets/imgs/products/14.jpg",
+        "desc": "Hotel-style pillow inspired by premium hospitality comfort. Offers plush softness, elegant support, and a refreshing sleep experience."
+    },
     {
         "id": 15,
         "title": "Ergonomic Pillow",
         "price": 380,
         "category": "pillows",
-        "image": "assets/imgs/products/15.jpg"},
+        "image": "assets/imgs/products/15.jpg",
+        "desc": "Ergonomic pillow designed to align the neck and shoulders naturally. Helps improve posture, reduce tension, and increase sleeping comfort."
+    },
     {
         "id": 16,
         "title": "Foldable Mattress",
         "price": 1500,
         "category": "mattress",
-        "image": "assets/imgs/products/16.jpg"},
+        "image": "assets/imgs/products/16.jpg",
+        "desc": "Foldable mattress offering flexible comfort and easy storage. Ideal for guests, small spaces, and multifunctional living areas."
+    },
     {
         "id": 17,
         "title": "Kids Pillow",
         "price": 100,
         "category": "offers",
-        "image": "assets/imgs/products/17.jpg"},
+        "image": "assets/imgs/products/17.jpg",
+        "desc": "Kids pillow made with soft safe materials and gentle support. Designed to provide comfort and healthy sleep for children."
+    },
     {
         "id": 18,
         "title": "Queen Mattress",
         "price": 3000,
         "category": "luxury",
-        "image": "assets/imgs/products/18.jpg"},
+        "image": "assets/imgs/products/18.jpg",
+        "desc": "Queen-size luxury mattress combining spacious comfort with premium support layers. Built for restful sleep and elegant bedroom style."
+    },
     {
         "id": 19,
         "title": "King Mattress",
         "price": 3500,
         "category": "luxury",
-        "image": "assets/imgs/products/19.jpg"},
+        "image": "assets/imgs/products/19.jpg",
+        "desc": "King-size mattress designed for maximum space, comfort, and durability. Perfect for families or users who prefer extra sleeping room."
+    },
     {
         "id": 20,
         "title": "Decor Pillow",
         "price": 220,
         "category": "pillows",
-        "image": "assets/imgs/products/20.jpg"}
+        "image": "assets/imgs/products/20.jpg",
+        "desc": "Decorative pillow that combines modern style with soft comfort. A beautiful accent piece for sofas, beds, and stylish interiors."
+    }
 ]

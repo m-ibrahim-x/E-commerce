@@ -46,7 +46,7 @@ function renderProducts(products) {
                     class="absolute top-3 right-3 w-10 h-10 bg-white rounded-full shadow flex items-center justify-center hover:scale-110 transition">
                         <i  class="fa-regular fa-heart  add-fav text-red-400 hover:text-gray-500 hover:scale-125 transition duration-200"></i>
                 </button>
-        </div> 
+            </div> 
         `
     });
 
