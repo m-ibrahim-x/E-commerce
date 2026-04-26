@@ -272,3 +272,32 @@ function syncWishlistButtons() {
         }
     });
 }
+/*********************
+    Search
+**********************/
+let searchInput = document.getElementById("searchInput");
+let searchForm = document.getElementById("searchForm");
+
+searchForm.addEventListener("submit", function(e){
+    e.preventDefault();
+});
+
+/* Live Search */
+searchInput.addEventListener("input", function(){
+
+    let value = this.value.toLowerCase().trim();
+
+    let filtered = all_products.filter(product => {
+
+        return product.title.toLowerCase().includes(value) ||
+               product.category.toLowerCase().includes(value);
+
+    });
+
+    renderProducts(filtered);
+
+    syncCartButtons();
+    syncWishlistButtons();
+
+});
+
